@@ -19,7 +19,7 @@ CLEAN_FILES = attractor_data.txt research_data.txt sequence.txt fractal.txt
 help:
 	@echo "make attractor_plot - построить график аттрактора"
 	@echo "make research_plot - построить график исследования бинарной последовательности"
-	@echo "make attractor_plot" - построить тепловую карту
+	@echo "make fractal_plot" - построить тепловую карту
 	@echo "make plot1" - построить рисунок 1
 	@echo "make plot2" - построить рисунок 2
 	@echo "make plot4" - построить рисунок 4
