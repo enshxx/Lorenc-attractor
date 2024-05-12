@@ -30,18 +30,18 @@ help:
 # Правило для сборки attractor_plot
 attractor_plot: clean
 	$(CC) $(CFLAGS) lorenz.cpp -o $(EXEC_LORENZ)
-	./lorenz $(X) $(Y) $(Z)
+	./lorenz $(X) $(Y) $(Z) $(SEQ_COUNT) $(D_XYZ)
 	gnuplot attractor.plot
 
 # Правило для сборки research_plot
 research_plot: clean
 	$(CC) $(CFLAGS) lorenz.cpp -o $(EXEC_LORENZ)
-	./lorenz $(X) $(Y) $(Z)
+	./lorenz $(X) $(Y) $(Z) $(SEQ_COUNT) $(D_XYZ)
 	gnuplot sequence_research.plot
 
 fractal_plot: clean
 	$(CC) $(CFLAGS) lorenz.cpp -o $(EXEC_LORENZ)
-	./lorenz $(X) $(Y) $(Z)
+	./lorenz $(X) $(Y) $(Z) $(SEQ_COUNT) $(D_XYZ)
 	gnuplot fractal.plot
 
 plot1: clean
