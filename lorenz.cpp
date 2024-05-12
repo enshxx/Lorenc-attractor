@@ -7,7 +7,8 @@
 #include <cmath>
 
 double O = 10, r = 28, b = 8 / 3;
-double x_start = 3.051522, y_start = 1.582542, z_start = 15.62388;
+double x_start = 3.051522, y_start = 1.582542, z_start = 15.62388, d_xyz = 0.04;
+int seq_count = 400;
 
 // Функция определяющая положение точки относительно двух плоскостей
 int plane_position(double x)
@@ -245,11 +246,11 @@ int main(int argc, char **argv)
         fprintf(stderr, "Usage: prog <x> <y> <z>\n");
         return -1;
     }
-    if (sscanf(argv[1], "%lf", &x_start) < 1 || sscanf(argv[2], "%lf", &y_start) < 1 || sscanf(argv[3], "%lf", &z_start) < 1)
+    if (sscanf(argv[1], "%lf", &x_start) < 1 || sscanf(argv[2], "%lf", &y_start) < 1 || sscanf(argv[3], "%lf", &z_start) < 1 || sscanf(argv[4], "%d", &seq_count) < 1 || sscanf(argv[5], "%lf", &d_xyz) < 1)
     {
-        fprintf(stderr, "Usage: prog <x> <y> <z>\n");
+        fprintf(stderr, "Usage: prog <x> <y> <z> <seq_count> <d_xyz>\n");
         return -1;
     }
-    sequence_analyse(x_start, y_start, z_start, 400, 0.02);
+    sequence_analyse(x_start, y_start, z_start, seq_count, d_xyz);
     return 0;
 }
